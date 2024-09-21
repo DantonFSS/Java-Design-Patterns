@@ -1,6 +1,6 @@
 package com.spring_design_patterns_gof_based.service;
 
-import com.spring_design_patterns_gof_based.model.Address;
+import com.spring_design_patterns_gof_based.model.AddressModel;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 public interface ViaCepService {
 
     @GetMapping("/{cep}/json/")
-    Address searchCep(@PathVariable("cep") String cep);
+    AddressModel searchCep(@PathVariable("cep") String cep);
+
 }
 
