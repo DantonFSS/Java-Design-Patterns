@@ -3,14 +3,14 @@ package com.spring_design_patterns_gof_based.model;
 import jakarta.persistence.*;
 
 @Entity
-public class Client {
+public class ClientModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String name;
     @ManyToOne
-    private Address address;
+    private AddressModel addressModel;
 
     public Long getId() {
         return id;
@@ -28,20 +28,12 @@ public class Client {
         this.name = name;
     }
 
-    public Address getAddress() {
-        return address;
+    public AddressModel getAddress() {
+        return addressModel;
     }
 
-    public void setAddress(Address address) {
-        this.address = address;
+    public void setAddress(AddressModel addressModel) {
+        this.addressModel = addressModel;
     }
 
-    @Override
-    public String toString() {
-        return "Client {" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", address=" + address +
-                '}';
-    }
 }
